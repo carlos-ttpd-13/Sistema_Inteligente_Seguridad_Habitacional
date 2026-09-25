@@ -28,8 +28,8 @@ class EventoController extends Controller
         $eventos = $query->paginate(20)->withQueryString();
 
         return Inertia::render('Eventos/Index', [
-            'eventos'  => $eventos,
-            'filtros'  => $request->only(['nivel', 'dispositivo']),
+            'eventos' => $eventos,
+            'filtros' => $request->only(['nivel', 'dispositivo']),
         ]);
     }
 
@@ -48,10 +48,10 @@ class EventoController extends Controller
     {
         $validated = $request->validate([
             'id_dispositivo' => ['required', 'exists:dispositivos,id_dispositivo'],
-            'tipo_evento'    => ['required', 'string', 'max:255'],
-            'nivel'          => ['required', 'in:info,warning,critical'],
-            'fecha_hora'     => ['required', 'date'],
-            'descripcion'    => ['nullable', 'string'],
+            'tipo_evento' => ['required', 'string', 'max:255'],
+            'nivel' => ['required', 'in:info,warning,critical'],
+            'fecha_hora' => ['required', 'date'],
+            'descripcion' => ['nullable', 'string'],
         ]);
 
         Evento::create($validated);
@@ -89,8 +89,8 @@ class EventoController extends Controller
     {
         $validated = $request->validate([
             'tipo_evento' => ['required', 'string', 'max:255'],
-            'nivel'       => ['required', 'in:info,warning,critical'],
-            'fecha_hora'  => ['required', 'date'],
+            'nivel' => ['required', 'in:info,warning,critical'],
+            'fecha_hora' => ['required', 'date'],
             'descripcion' => ['nullable', 'string'],
         ]);
 

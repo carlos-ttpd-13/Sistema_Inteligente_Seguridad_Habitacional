@@ -11,6 +11,7 @@ class Acceso extends Model
     use HasFactory;
 
     protected $table = 'accesos';
+
     protected $primaryKey = 'id_acceso';
 
     protected $fillable = [

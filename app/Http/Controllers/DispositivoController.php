@@ -38,10 +38,10 @@ class DispositivoController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'id_usuario'  => ['required', 'exists:usuarios,id_usuario'],
-            'tipo'        => ['required', 'string', 'max:255'],
-            'ubicacion'   => ['nullable', 'string', 'max:255'],
-            'estado'      => ['required', 'in:activo,inactivo'],
+            'id_usuario' => ['required', 'exists:usuarios,id_usuario'],
+            'tipo' => ['required', 'string', 'max:255'],
+            'ubicacion' => ['nullable', 'string', 'max:255'],
+            'estado' => ['required', 'in:activo,inactivo'],
         ]);
 
         Dispositivo::create($validated);
@@ -78,9 +78,9 @@ class DispositivoController extends Controller
     public function update(Request $request, Dispositivo $dispositivo): RedirectResponse
     {
         $validated = $request->validate([
-            'tipo'      => ['required', 'string', 'max:255'],
+            'tipo' => ['required', 'string', 'max:255'],
             'ubicacion' => ['nullable', 'string', 'max:255'],
-            'estado'    => ['required', 'in:activo,inactivo'],
+            'estado' => ['required', 'in:activo,inactivo'],
         ]);
 
         $dispositivo->update($validated);

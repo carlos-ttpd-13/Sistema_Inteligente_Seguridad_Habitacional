@@ -11,6 +11,7 @@ class Alerta extends Model
     use HasFactory;
 
     protected $table = 'alertas';
+
     protected $primaryKey = 'id_alerta';
 
     protected $fillable = [

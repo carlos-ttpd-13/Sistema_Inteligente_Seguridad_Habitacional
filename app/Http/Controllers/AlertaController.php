@@ -48,12 +48,12 @@ class AlertaController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'id_evento'  => ['nullable', 'exists:eventos,id_evento'],
+            'id_evento' => ['nullable', 'exists:eventos,id_evento'],
             'id_usuario' => ['required', 'exists:usuarios,id_usuario'],
-            'mensaje'    => ['required', 'string'],
-            'canal'      => ['required', 'in:web,email,sms,push'],
-            'leida'      => ['boolean'],
-            'fecha'      => ['required', 'date'],
+            'mensaje' => ['required', 'string'],
+            'canal' => ['required', 'in:web,email,sms,push'],
+            'leida' => ['boolean'],
+            'fecha' => ['required', 'date'],
         ]);
 
         Alerta::create($validated);
@@ -96,8 +96,8 @@ class AlertaController extends Controller
     {
         $validated = $request->validate([
             'mensaje' => ['required', 'string'],
-            'canal'   => ['required', 'in:web,email,sms,push'],
-            'leida'   => ['boolean'],
+            'canal' => ['required', 'in:web,email,sms,push'],
+            'leida' => ['boolean'],
         ]);
 
         $alerta->update($validated);

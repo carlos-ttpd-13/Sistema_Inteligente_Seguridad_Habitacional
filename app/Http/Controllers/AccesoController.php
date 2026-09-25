@@ -52,11 +52,11 @@ class AccesoController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'id_usuario'     => ['required', 'exists:usuarios,id_usuario'],
+            'id_usuario' => ['required', 'exists:usuarios,id_usuario'],
             'id_dispositivo' => ['required', 'exists:dispositivos,id_dispositivo'],
-            'metodo'         => ['required', 'in:pin,rfid,app'],
-            'resultado'      => ['required', 'in:exito,denegado'],
-            'fecha_hora'     => ['required', 'date'],
+            'metodo' => ['required', 'in:pin,rfid,app'],
+            'resultado' => ['required', 'in:exito,denegado'],
+            'fecha_hora' => ['required', 'date'],
         ]);
 
         Acceso::create($validated);

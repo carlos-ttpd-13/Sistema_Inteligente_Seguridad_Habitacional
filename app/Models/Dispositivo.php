@@ -12,6 +12,7 @@ class Dispositivo extends Model
     use HasFactory;
 
     protected $table = 'dispositivos';
+
     protected $primaryKey = 'id_dispositivo';
 
     protected $fillable = [

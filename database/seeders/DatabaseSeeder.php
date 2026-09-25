@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
                         Alerta::factory()->create([
                             'id_evento' => $evento->id_evento,
                             'id_usuario' => $usuario->id_usuario,
-                            'mensaje' => 'Alerta generada por evento: ' . $evento->tipo_evento,
+                            'mensaje' => 'Alerta generada por evento: '.$evento->tipo_evento,
                         ]);
                     }
                 }
