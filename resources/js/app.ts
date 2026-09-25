@@ -1,5 +1,5 @@
 import { createInertiaApp } from '@inertiajs/vue3';
-import { createApp, h } from 'vue';
+import { createApp, DefineComponent, h } from 'vue';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -8,7 +8,7 @@ void createInertiaApp({
     resolve: (name) => {
         const pages = import.meta.glob('./pages/**/*.vue', {
             eager: true,
-        }) as Record<string, { default: object }>;
+        }) as Record<string, { default: DefineComponent }>;
         const page = pages[`./pages/${name}.vue`];
         if (!page) {
             throw new Error(`Page not found: ${name}`);
